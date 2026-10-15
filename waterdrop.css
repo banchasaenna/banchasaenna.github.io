@@ -219,3 +219,199 @@ section {
         padding: 0.65rem 0.9rem;
     }
 }
+
+/* กล่องภาพพรีวิวตัวอย่างบนการ์ด */
+.img-preview-box {
+    position: relative;
+    width: 100%;
+    max-height: 260px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--drop-border);
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.img-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.img-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 9, 19, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.img-preview-box:hover img {
+    transform: scale(1.04);
+}
+
+.img-preview-box:hover .img-hover-overlay {
+    opacity: 1;
+}
+
+/* Modal Popup แสดงภาพขยายใหญ่ */
+.image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(7, 9, 19, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.image-modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    max-width: 90vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-modal.show .modal-content-wrapper {
+    transform: scale(1);
+}
+
+.modal-content-wrapper img {
+    max-width: 100%;
+    max-height: 78vh;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+}
+
+.modal-caption {
+    margin-top: 0.8rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(239, 68, 68, 0.8);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+/* กรอบภาพกิจกรรม */
+.activity-slider-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--drop-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.activity-slide-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* ปุ่มลูกศรซ้าย-ขวา */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    /* ดันปุ่มลอยขึ้นมาด้านบนสุด */
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.slider-arrow.left {
+    left: 15px;
+}
+
+.slider-arrow.right {
+    right: 15px;
+}
+
+.slider-arrow:hover {
+    background: rgba(56, 189, 248, 0.85);
+    border-color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 680px) {
+    .activity-slide-container {
+        height: 240px;
+    }
+}
