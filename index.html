@@ -4,614 +4,333 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bancha | Developer Portfolio</title>
-    <!-- Google Fonts & Font Awesome Icons -->
+    <title>Bancha Saenna | Portfolio</title>
+    <link rel="stylesheet" href="waterdrop.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Prompt:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Prompt:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <style>
-        :root {
-            --bg-dark: #0b0f19;
-            --card-bg: #151d30;
-            --card-border: rgba(255, 255, 255, 0.08);
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', 'Prompt', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--card-border);
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 1.1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .btn-login {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 0.45rem 1.1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.88rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn-login:hover {
-            background: var(--accent);
-            color: var(--bg-dark);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
-
-        /* Container & Section */
-        section {
-            max-width: 1150px;
-            margin: 0 auto;
-            padding: 6.5rem 1.5rem 3rem;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent);
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin-bottom: 2.2rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg-dark);
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--card-border);
-            background: var(--card-bg);
-            color: var(--text-main);
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .btn-secondary:hover {
-            background: #1f2a44;
-        }
-
-        /* Section Titles */
-        .section-header {
-            margin-bottom: 2.5rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 14px;
-            border: 1px solid var(--card-border);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(56, 189, 248, 0.4);
-        }
-
-        .project-thumbnail {
-            width: 100%;
-            height: 190px;
-            background: #1e283d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 2rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-            flex-grow: 1;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 0.25rem 0.65rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            border-top: 1px solid var(--card-border);
-            padding-top: 1rem;
-        }
-
-        .project-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            transition: color 0.2s;
-        }
-
-        .project-links a:hover {
-            color: var(--accent);
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .skill-box {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            padding: 1.2rem;
-            text-align: center;
-            transition: transform 0.2s;
-        }
-
-        .skill-box:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent);
-        }
-
-        .skill-box i {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .skill-box span {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Contact */
-        .contact-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 2.5rem;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Admin Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 2.2rem;
-            border-radius: 14px;
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1.2rem;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.3rem;
-            cursor: pointer;
-        }
-
-        .modal-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 0.65rem 0.9rem;
-            background: var(--bg-dark);
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 0.95rem;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--accent);
-        }
-
-        .btn-submit {
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--accent);
-            border: none;
-            color: var(--bg-dark);
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <a href="#home" class="logo">Bancha<span>.dev</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button class="btn-login" id="openModal">Admin Login</button></li>
-            </ul>
+    <main class="container">
+
+        <!-- โปรไฟล์ -->
+        <section id="profile">
+            <div class="water-card" style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div
+                    style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; background: #cbd5e1; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 600;">
+                    <img src="unnamed.jpg" alt="Bancha Saenna" style="width: 100%; height: 100%; object-fit: cover;"
+                        onerror="this.style.display='none'; this.parentElement.innerText='160 x 160';">
+                </div>
+                <div>
+                    <div
+                        style="color: var(--accent); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;">
+                        Developer | Data Analyst | RPA | IOT</div>
+                    <h1 style="font-size: 2.3rem; margin: 0.2rem 0; font-weight: 700;">บัญชา แสนนา</h1>
+                    <p style="color: var(--text-muted); font-size: 1rem;">Bancha Saenna
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">บัณฑิตสาขาคอมพิวเตอร์ธุรกิจ
+                        คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม
+                    </p>
+                </div>
+            </div>
+
+            <div class="water-card">
+                <h2 style="font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--accent);">เกี่ยวกับฉัน (Summary)</h2>
+                <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.8;">
+                    มีความสนใจด้านการพัฒนาระบบ การวิเคราะห์ข้อมูล และการประยุกต์ใช้เทคโนโลยีแก้ปัญหาเชิงปฏิบัติการจริง
+                    มีประสบการณ์พัฒนาระบบ RPA เพื่อดึงและถ่ายโอนข้อมูลสำหรับบริหารคลังสินค้า
+                    พัฒนาต้นแบบธนาคารขยะรีไซเคิลอัตโนมัติด้วยระบบ Computer Vision บน IoT
+                    และนำเสนองานวิจัยโมเดลพยากรณ์พืชที่เหมาะสมจากข้อมูลดินและสภาพอากาศ
+                </p>
+            </div>
+        </section>
+
+        <!-- ประสบการณ์ -->
+        <section id="experience">
+            <h2 class="page-title"><i class="fa-solid fa-briefcase"></i> ประสบการณ์การทำงาน</h2>
+
+            <div class="water-card">
+                <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+                    <div
+                        style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; background: #cbd5e1; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 600;">
+                        <img src="CPAll.jpg" alt="CPALL" style="width: 100%; height: 100%; object-fit: cover;"
+                            onerror="this.style.display='none'; this.parentElement.innerText='140 x 140';">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <span style="color: var(--accent); font-size: 0.85rem; font-weight: 600;">20 เมษายน 2026 - 22
+                            มิถุนายน
+                            2026</span>
+                        <h3 style="font-size: 1.3rem; margin: 0.2rem 0;">Inventory Control Intern |
+                            ฝึกประสบการณ์ระดับปริญญาตรี</h3>
+
+                        <p style="color: var(--text-muted); margin-bottom: 0.8rem;">CP ALL Distribution Center, ขอนแก่น
+                        </p>
+                        <ul style="padding-left: 1.2rem; color: #cbd5e1; line-height: 1.7;">
+                            <li>พัฒนาระบบ RPA เพื่อจัดการข้อมูลสินค้าอัตโนมัติสำหรับการจัดส่งสินค้าไปยังประเทศลาว</li>
+                            <li>ขยายโปรแกรมจัดการข้อมูลอัตโนมัติให้ครอบคลุมการทำงานทั้ง 4 คลังสินค้า</li>
+                            <li>ช่วยลดภาระงานประจำวันของพนักงานในการจัดทำข้อมูลสินค้า</li>
+                            <li>เรียนรู้งานภายในคลังเช่นการจัดการสินค้า
+                                การปรับปรุงรูปแบบการจัดสินค้าและสภาพแวดล้อมเพื่อให้เอื้อต่อการทำงาน</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="water-card">
+                <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+                    <div
+                        style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; background: #cbd5e1; display: flex; align-items: center; justify-content: center; color: #475569; font-weight: 600;">
+                        <img src="CPRam.jpg" alt="CPRam" style="width: 100%; height: 100%; object-fit: cover;"
+                            onerror="this.style.display='none'; this.parentElement.innerText='140 x 140';">
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <span style="color: var(--accent); font-size: 0.85rem; font-weight: 600;">30 กันยายน 2021 - 30
+                            กันยายน 2022
+                        </span>
+                        <h3 style="font-size: 1.3rem; margin: 0.2rem 0;">Production&Inspector Intern |
+                            ฝึกประสบการณ์ระดับปวส.</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 0.8rem;">CP ALL Distribution Center, ขอนแก่น
+                        </p>
+                        <ul style="padding-left: 1.2rem; color: #cbd5e1; line-height: 1.7;">
+                            <li>ตำแหน่งฝ่ายผลิตและตรวจสอบสินค้า ทำหน้าที่ในการควบคุบดูแลการแพ็คสินค้า
+                                และวางแผนการแพ็คสินค้า</li>
+                            <li>ตรวจสอบบรรจุภัณฑ์และสินค้า ลงข้อมูลยอดสินค้าเสียหาย และยอดการผลิตประจำวัน</li>
+                            <li>จัดสรรพนักงานให้เพียงพอต่อการแพ็คสินค้าและผลิตสินค้า</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ผลงาน -->
+        <section id="projects">
+            <h2 class="page-title"><i class="fa-solid fa-code"></i> ผลงานโปรเจกต์ & งานวิจัย</h2>
+
+            <div class="water-card">
+                <!-- หัวข้อโปรเจกต์ -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.2rem;">iWasteBank Prototype</h3>
+                        <div style="color: var(--accent); font-size: 0.92rem; font-weight: 600;">
+                            ต้นแบบระบบธนาคารขยะรีไซเคิลด้วยเทคโนโลยีเว็บแอปพลิเคชันและอินเทอร์เน็ตของสรรพสิ่ง (IoT)
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
+                    นวัตกรรมคัดแยกขยะรีไซเคิลและสะสมแต้มอัจฉริยะแบบเรียลไทม์
+                    ขับเคลื่อนด้วยสถาปัตยกรรมโครงข่ายประสาทเทียมเชิงลึก <strong>MobileNetV2</strong> บนฮาร์ดแวร์
+                    <strong>Raspberry Pi 4</strong> (Edge Computing) ร่วมกับกล้องประมวลผลภาพ (Inference Time)
+                    เฉลี่ยรวดเร็ว<strong>น้อยกว่า 1 วินาทีต่อรายการ</strong>
+                    บรรลุค่าความแม่นยำในการจำแนกประเภทวัสดุสูงสุดถึง <strong>95.00%</strong>พร้อมระบบ
+                    Multi-threading ช่วยให้หน้าจอเว็บและกลไกหุ่นยนต์ทำงานได้อย่างลื่นไหลไร้รอยต่อ
+                </p>
+
+                <!-- วิดีโอสาธิตการทำงานจาก YouTube -->
+                <div
+                    style="border-radius: 16px; overflow: hidden; border: 1px solid var(--drop-border); margin-bottom: 1.2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                        <iframe src="https://www.youtube.com/embed/hYE2-Mt15T0" title="iWasteBank Demonstration Video"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- แท็กเทคโนโลยีและจุดเด่น -->
+                <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.2rem;">
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">IoT
+                        System</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">MobileNetV2
+                        (TFLite)</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Raspberry
+                        Pi 4</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Computer
+                        Vision</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Accuracy
+                        95%</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Cloud
+                        Database</span>
+                </div>
+
+                <!-- ปุ่มเปิดเอกสาร Google Drive -->
+                <div
+                    style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+                    <!-- **อย่าลืมเปลี่ยน YOUR_GOOGLE_DRIVE_LINK เป็นลิงก์โฟลเดอร์ใน Google Drive ของคุณ** -->
+                    <a href="YOUR_GOOGLE_DRIVE_LINK" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255,255,255,0.25); padding: 0.55rem 1.1rem; border-radius: 20px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all 0.25s ease;">
+                        <i class="fa-brands fa-google-drive" style="color: #34a853; font-size: 1.1rem;"></i>
+                        <span>ดูไฟล์รูปภาพ / เอกสารฉบับเต็มบน Google Drive</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; opacity: 0.7;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="water-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">AUCC 2026 Research Award</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                    โมเดลพยากรณ์พืชที่เหมาะสมจากข้อมูลดินและสภาพอากาศ นำเสนอแบบโปสเตอร์ในการประชุมวิชาการ AUCC 2026
+                    ได้รับรางวัลระดับดีมาก (Very Good Award)
+                </p>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span
+                        style="background: rgba(56,189,248,0.15); color: var(--accent); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.8rem;">Machine
+                        Learning</span>
+                    <span
+                        style="background: rgba(56,189,248,0.15); color: var(--accent); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.8rem;">Data
+                        Analytics</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: การศึกษา -->
+        <section id="education">
+            <h2 class="page-title"><i class="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา</h2>
+
+            <div class="water-card">
+                <span style="color: var(--accent); font-weight: 600;">2024 - 2026</span>
+                <h3 style="font-size: 1.2rem;">ปริญญาตรี บธ.บ. สาขาคอมพิวเตอร์ธุรกิจ (GPA 3.38)</h3>
+                <p style="color: var(--text-muted);">คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม</p>
+            </div>
+
+            <div class="water-card">
+                <span style="color: var(--accent); font-weight: 600;">2021 - 2023</span>
+                <h3 style="font-size: 1.2rem;">ปวส. สาขาเทคโนโลยีธุรกิจดิจิทัล (GPA 3.61)</h3>
+                <p style="color: var(--text-muted);">วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
+            </div>
+
+            <div class="water-card">
+                <span style="color: var(--accent); font-weight: 600;">2018 - 2021</span>
+                <h3 style="font-size: 1.2rem;">ปวช. สาขาคอมพิวเตอร์ธุรกิจ (GPA 3.74)</h3>
+                <p style="color: var(--text-muted);">วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
+            </div>
+        </section>
+
+        <!-- Section 5: ทักษะ -->
+        <section id="skills">
+            <h2 class="page-title"><i class="fa-solid fa-bolt"></i> ทักษะ & ใบรับรอง</h2>
+
+            <div class="water-card">
+                <h3 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 0.8rem;">Programming & Tools</h3>
+                <p style="color: #cbd5e1; line-height: 1.8;">
+                    Python, SQL, PHP, HTML/CSS, Power Automate Desktop (RPA), Power BI, Altair AI, VS Code, Google Colab
+                </p>
+                <h3 style="font-size: 1.1rem; color: var(--accent); margin: 1.2rem 0 0.8rem;">Certificates</h3>
+                <p style="color: #cbd5e1; line-height: 1.8;">
+                    • Generative AI Foundations - Pearson / Certiport (2026)<br>
+                    • Responsive Web Design - Thai MOOC / มทร.อีสาน (2025)<br>
+                    • Microsoft Power BI - TPQI (2025)
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 6: ติดต่อ -->
+        <section id="contact">
+            <h2 class="page-title"><i class="fa-solid fa-paper-plane"></i> ช่องทางการติดต่อ</h2>
+
+            <div class="water-card" style="text-align: center;">
+                <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-envelope" style="color: var(--accent);"></i> banchasaenna04@gmail.com
+                </p>
+                <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-phone" style="color: var(--accent);"></i> 061-294-4909
+                </p>
+                <p style="color: #cbd5e1; font-size: 1.1rem;">
+                    <i class="fa-brands fa-github" style="color: var(--accent);"></i> github.com/banchasaenna
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Water Drop Navbar -->
+    <div class="water-nav-container">
+        <nav class="water-nav" id="waterNav">
+            <div class="nav-indicator" id="navIndicator"></div>
+            <a href="#profile" class="nav-item active"><i class="fa-solid fa-user"></i> <span>โปรไฟล์</span></a>
+            <a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> <span>ประสบการณ์</span></a>
+            <a href="#projects" class="nav-item"><i class="fa-solid fa-code"></i> <span>ผลงาน</span></a>
+            <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> <span>การศึกษา</span></a>
+            <a href="#skills" class="nav-item"><i class="fa-solid fa-bolt"></i> <span>ทักษะ</span></a>
+            <a href="#contact" class="nav-item"><i class="fa-solid fa-paper-plane"></i> <span>ติดต่อ</span></a>
         </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="badge">🚀 Available for new opportunities</div>
-        <h1>สวัสดีครับ, ผม <span>Bancha</span> 👋</h1>
-        <p>ยินดีต้อนรับสู่ Portfolio รวมผลงานด้านการพัฒนาเว็บไซต์ ซอฟต์แวร์ และเทคโนโลยีที่สนใจ</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn-primary">ดูผลงานทั้งหมด</a>
-            <a href="#contact" class="btn-secondary">ติดต่อ</a>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-header">
-            <h2>Featured Projects</h2>
-            <p>ผลงานโปรเจกต์เด่นที่พัฒนาขึ้น</p>
-        </div>
-
-        <div class="projects-grid" id="projectContainer">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Project Name 1</h3>
-                    <p class="project-desc">รายละเอียดสั้นๆ เกี่ยวกับผลงาน เช่น ฟีเจอร์หลัก
-                        หรือปัญหาที่ระบบนี้เข้ามาช่วยแก้ไข</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML/CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                        <a href="#"><i class="fa-brands fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-thumbnail">
-                    <i class="fa-solid fa-layer-group"></i>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Project Name 2</h3>
-                    <p class="project-desc">ระบบประมวลผลหรือเว็บแอปพลิเคชันที่พัฒนาด้วย Database และ API</p>
-                    <div class="project-tags">
-                        <span class="tag">Full-Stack</span>
-                        <span class="tag">Database</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                        <a href="#"><i class="fa-brands fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-header">
-            <h2>Skills & Technologies</h2>
-            <p>ทักษะเครื่องมือและเทคโนโลยีที่ใช้งาน</p>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-box">
-                <i class="fa-brands fa-html5"></i>
-                <span>HTML5</span>
-            </div>
-            <div class="skill-box">
-                <i class="fa-brands fa-css3-alt"></i>
-                <span>CSS3</span>
-            </div>
-            <div class="skill-box">
-                <i class="fa-brands fa-js"></i>
-                <span>JavaScript</span>
-            </div>
-            <div class="skill-box">
-                <i class="fa-solid fa-database"></i>
-                <span>Database</span>
-            </div>
-            <div class="skill-box">
-                <i class="fa-brands fa-git-alt"></i>
-                <span>Git</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact-card">
-            <h3>Let's Connect</h3>
-            <p>สนใจร่วมงาน หรือพูดคุยเกี่ยวกับโปรเจกต์ สามารถติดต่อได้ที่ช่องทางด้านล่างนี้</p>
-            <a href="https://github.com/banchasaenna" target="_blank" class="btn-primary"
-                style="display: inline-block;">
-                <i class="fa-brands fa-github"></i> Visit my GitHub
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Bancha. All Rights Reserved. Built with GitHub Pages.</p>
-    </footer>
-
-    <!-- Admin Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModal">&times;</button>
-            <div class="modal-title">Admin Login</div>
-            <form id="adminLoginForm">
-                <div class="form-group">
-                    <label for="adminEmail">Email</label>
-                    <input type="email" id="adminEmail" required placeholder="admin@example.com" />
-                </div>
-                <div class="form-group">
-                    <label for="adminPassword">Password</label>
-                    <input type="password" id="adminPassword" required placeholder="••••••••" />
-                </div>
-                <button type="submit" class="btn-submit">Login</button>
-            </form>
-        </div>
     </div>
 
+    <!-- Script จัดการการสไลด์ของปุ่ม และเปลี่ยน Active ปุ่มอัตโนมัติขณะเลื่อนจอ (ScrollSpy) -->
     <script>
-        // Modal Control
-        const modal = document.getElementById('loginModal');
-        const openBtn = document.getElementById('openModal');
-        const closeBtn = document.getElementById('closeModal');
-        const form = document.getElementById('adminLoginForm');
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById("waterNav");
+            const indicator = document.getElementById("navIndicator");
+            const navItems = document.querySelectorAll(".nav-item");
+            const sections = document.querySelectorAll("section");
 
-        openBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-        });
+            // ฟังก์ชันสไลด์แคปซูลหยดน้ำ
+            function moveIndicator(targetEl) {
+                if (!targetEl) return;
+                const navRect = nav.getBoundingClientRect();
+                const targetRect = targetEl.getBoundingClientRect();
+                const leftOffset = targetRect.left - navRect.left;
 
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+                indicator.style.width = `${targetRect.width}px`;
+                indicator.style.transform = `translateX(${leftOffset}px)`;
+                indicator.style.opacity = "1";
             }
-        });
 
-        // Form Event
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('เข้าสู่ระบบสำเร็จ (พร้อมสำหรับเชื่อม Supabase Auth ในขั้นต่อไป)');
-            modal.style.display = 'none';
+            // วางแคปซูลตำแหน่งแรกเริ่ม
+            const activeInitial = document.querySelector(".nav-item.active");
+            if (activeInitial) moveIndicator(activeInitial);
+
+            // เมื่อกดปุ่มบน Navbar
+            navItems.forEach(item => {
+                item.addEventListener("click", (e) => {
+                    navItems.forEach(el => el.classList.remove("active"));
+                    item.classList.add("active");
+                    moveIndicator(item);
+                });
+            });
+
+            // ตรวจจับตำแหน่งเลื่อนหน้าจอ (ScrollSpy) แล้วเลื่อนปุ่มให้อัตโนมัติ
+            window.addEventListener("scroll", () => {
+                let currentSectionId = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.scrollY >= sectionTop) {
+                        currentSectionId = section.getAttribute("id");
+                    }
+                });
+
+                if (currentSectionId) {
+                    navItems.forEach(item => {
+                        const href = item.getAttribute("href").replace("#", "");
+                        if (href === currentSectionId && !item.classList.contains("active")) {
+                            navItems.forEach(el => el.classList.remove("active"));
+                            item.classList.add("active");
+                            moveIndicator(item);
+                        }
+                    });
+                }
+            });
+
+            window.addEventListener("resize", () => {
+                const activeCurrent = document.querySelector(".nav-item.active");
+                if (activeCurrent) moveIndicator(activeCurrent);
+            });
         });
     </script>
 </body>

@@ -1,0 +1,221 @@
+:root {
+    --bg-base: #070913;
+    --text-main: #ffffff;
+    --text-muted: #cbd5e1;
+    --accent: #38bdf8;
+
+    /* ตัวแปรความใสแบบหยดน้ำ (Liquid Glass) */
+    --drop-surface: rgba(255, 255, 255, 0.05);
+    --drop-border: rgba(255, 255, 255, 0.35);
+    --drop-border-bottom: rgba(255, 255, 255, 0.12);
+    --drop-gloss: rgba(255, 255, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* เลื่อนหน้าจออย่างนุ่มนวลเมื่อกดลิงก์ */
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Prompt', sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* แสงฟุ้งพื้นหลังสะท้อนความใส */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(95px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+body::before {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #38bdf8 0%, #6366f1 70%);
+    top: -100px;
+    left: 10%;
+}
+
+body::after {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #06b6d4 0%, #3b82f6 60%);
+    bottom: 50px;
+    right: 5%;
+}
+
+main.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* เว้นระยะ offset ด้านบนเวลากดเลื่อนมาหาแต่ละ Section */
+section {
+    scroll-margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* การ์ดหยดน้ำใส (Water Drop Card) */
+.water-card {
+    position: relative;
+    background: var(--drop-surface);
+    backdrop-filter: blur(28px) saturate(210%);
+    -webkit-backdrop-filter: blur(28px) saturate(210%);
+    border: 1px solid var(--drop-border);
+    border-bottom: 1px solid var(--drop-border-bottom);
+    border-radius: 28px;
+    padding: 2.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1.5px 2px var(--drop-gloss),
+        inset 0 -1.5px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.water-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 25px 50px rgba(56, 189, 248, 0.25),
+        inset 0 2px 3px rgba(255, 255, 255, 0.8),
+        inset 0 -1.5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.water-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    border-radius: 28px 28px 100px 100px;
+    pointer-events: none;
+}
+
+/* คอนเทนเนอร์ลอยตรงกลางล่างจอเสมอ */
+.water-nav-container {
+    position: fixed !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 99999;
+    width: max-content !important;
+    max-width: 95vw !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    pointer-events: none;
+}
+
+/* แถบแนฟบาร์หยดน้ำย่อ-ขยายตามปุ่ม */
+.water-nav {
+    position: relative;
+    display: inline-flex !important;
+    width: auto !important;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(35px) saturate(230%);
+    -webkit-backdrop-filter: blur(35px) saturate(230%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    padding: 0.45rem 0.6rem;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(56, 189, 248, 0.2),
+        inset 0 2px 3px rgba(255, 255, 255, 0.6),
+        inset 0 -1.5px 2px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+}
+
+/* แคปซูลหยดน้ำเลื่อนตามตำแหน่งปุ่ม (Sliding Indicator) */
+.nav-indicator {
+    position: absolute;
+    top: 0.45rem;
+    left: 0;
+    height: calc(100% - 0.9rem);
+    background: rgba(56, 189, 248, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    box-shadow:
+        0 4px 18px rgba(56, 189, 248, 0.45),
+        inset 0 1.5px 2px rgba(255, 255, 255, 0.8),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 1;
+    transition: transform 0.38s cubic-bezier(0.25, 1, 0.3, 1),
+        width 0.38s cubic-bezier(0.25, 1, 0.3, 1);
+    opacity: 0;
+}
+
+/* ปุ่มกด */
+.nav-item {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 30px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+}
+
+.nav-item.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* สำหรับจอมือถือ */
+@media (max-width: 680px) {
+    .nav-item span {
+        display: none;
+        /* ซ่อนข้อความ เหลือเฉพาะไอคอนเพื่อให้กระชับ */
+    }
+
+    .nav-item {
+        padding: 0.65rem 0.9rem;
+    }
+}
