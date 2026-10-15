@@ -173,88 +173,386 @@
                 <div
                     style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
                     <!-- **อย่าลืมเปลี่ยน YOUR_GOOGLE_DRIVE_LINK เป็นลิงก์โฟลเดอร์ใน Google Drive ของคุณ** -->
-                    <a href="YOUR_GOOGLE_DRIVE_LINK" target="_blank"
+                    <a href="https://drive.google.com/drive/folders/1hM_Jl0RFPS9-F3iMsL-DSUObLcVfJWMq?usp=sharing"
+                        target="_blank"
                         style="display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255,255,255,0.25); padding: 0.55rem 1.1rem; border-radius: 20px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all 0.25s ease;">
                         <i class="fa-brands fa-google-drive" style="color: #34a853; font-size: 1.1rem;"></i>
-                        <span>ดูไฟล์รูปภาพ / เอกสารฉบับเต็มบน Google Drive</span>
+                        <span>ดูไฟล์รูปภาพ / เอกสารบน Google Drive</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; opacity: 0.7;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="water-card">
+                <!-- หัวข้อและ Badge รางวัล -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.2rem;">AUCC 2026 Research Award</h3>
+                        <div style="color: var(--accent); font-size: 0.92rem; font-weight: 600;">
+                            การพัฒนาโมเดล AI พยากรณ์ประเภทพืชที่เหมาะสมจากข้อมูลดินและสภาพอากาศ
+                        </div>
+                    </div>
+                    <span
+                        style="background: rgba(251, 191, 36, 0.15); color: #fbbf24; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(251, 191, 36, 0.3); font-weight: 600;">
+                        <i class="fa-solid fa-trophy"></i> รางวัลระดับดีมาก (Very Good Award)
+                    </span>
+                </div>
+
+                <!-- คำอธิบายรายละเอียดผลงาน -->
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
+                    งานวิจัยเปรียบเทียบประสิทธิภาพแบบจำลองการเรียนรู้ของเครื่อง (Machine Learning) ประกอบด้วย Decision
+                    Tree, Random Forest และ k-NN ในการพยากรณ์และแนะนำประเภทพืชที่เหมาะสมกับสภาพดินและสภาพอากาศ
+                    นำเสนอผลงานวิจัยแบบโปสเตอร์ในการประชุมวิชาการระดับเอเชีย AUCC 2026
+                </p>
+
+                <!-- ตัวอย่างภาพโปสเตอร์ (กดแล้วจะเปิด Modal พรีวิวขึ้นมา) -->
+                <div style="margin-bottom: 1.2rem;">
+                    <div class="img-preview-box"
+                        onclick="openImageModal(this.querySelector('img').src, 'ภาพเกียรติบัตรงานวิจัย AUCC 2026')">
+                        <!-- เปลี่ยน path รูปโปสเตอร์ตรง src -->
+                        <img src="Image_25690317_095730_357.jpeg" alt="ภาพเกียรติบัตรงานวิจัย AUCC 2026"
+                            onerror="this.onerror=null; this.src='https://via.placeholder.com/800x450/1e293b/38bdf8?text=Click+to+Preview+Poster';">
+                        <div class="img-hover-overlay">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> คลิกเพื่อดูภาพขนาดใหญ่
+                        </div>
+                    </div>
+                </div>
+
+                <!-- แท็กเทคโนโลยีที่ใช้ -->
+                <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.2rem;">
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Machine
+                        Learning</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Data
+                        Analytics</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Crop
+                        Recommendation</span>
+                </div>
+
+                <!-- ปุ่มเปิดไฟล์ PDF -->
+                <div
+                    style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+                    <a href="P-DSA-0005.pdf" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255,255,255,0.25); padding: 0.55rem 1.1rem; border-radius: 20px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all 0.25s ease;">
+                        <i class="fa-regular fa-file-pdf" style="color: #ef4444; font-size: 1.1rem;"></i>
+                        <span>เปิดอ่านเอกสารวิจัย (PDF)</span>
                         <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; opacity: 0.7;"></i>
                     </a>
                 </div>
             </div>
             <div class="water-card">
-                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">AUCC 2026 Research Award</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">
-                    โมเดลพยากรณ์พืชที่เหมาะสมจากข้อมูลดินและสภาพอากาศ นำเสนอแบบโปสเตอร์ในการประชุมวิชาการ AUCC 2026
-                    ได้รับรางวัลระดับดีมาก (Very Good Award)
+                <!-- หัวข้อและ Badge ประเภทงาน -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <div>
+                        <h3 style="font-size: 1.35rem; margin-bottom: 0.2rem;">RPA Workflow Automation (CP ALL Khon
+                            Kaen)</h3>
+                        <div style="color: var(--accent); font-size: 0.92rem; font-weight: 600;">
+                            ระบบอัตโนมัติจัดการข้อมูล Summary Packing List และ Packing List (RDC to Laos)
+                        </div>
+                    </div>
+                    <span
+                        style="background: rgba(56, 189, 248, 0.15); color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(56, 189, 248, 0.3); font-weight: 600;">
+                        <i class="fa-solid fa-robot"></i> RPA Automation Project
+                    </span>
+                </div>
+
+                <!-- รายละเอียดคำอธิบายระบบ -->
+                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">
+                    พัฒนากระบวนการทำงานอัตโนมัติด้วย <strong>Power Automate Desktop</strong> เพื่อรวบรวม โอนถ่าย
+                    และจัดทำเอกสาร Delivery Note สำหรับร้านสาขา CP ALL ในประเทศลาว
+                    ลดการทำงานแบบ Manual ช่วยให้การประมวลผลข้อมูลแม่นยำ 100%
+                    และรองรับการจัดการคลังสินค้าทั้ง 4 คลัง
+                    ช่วยประหยัดเวลาการทำงานเอกสารประจำวันได้อย่างมีประสิทธิภาพ
                 </p>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+
+                <!-- แท็กเทคโนโลยีที่ใช้ -->
+                <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.2rem;">
                     <span
-                        style="background: rgba(56,189,248,0.15); color: var(--accent); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.8rem;">Machine
-                        Learning</span>
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Power
+                        Automate Desktop</span>
                     <span
-                        style="background: rgba(56,189,248,0.15); color: var(--accent); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.8rem;">Data
-                        Analytics</span>
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Microsoft
+                        Excel Automation</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">SharePoint
+                        / OneDrive Integration</span>
+                    <span
+                        style="background: rgba(255,255,255,0.08); color: var(--accent); padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.15);">Process
+                        Optimization</span>
+                </div>
+
+                <!-- ปุ่มเปิดดูเอกสารคู่มือ PDF -->
+                <div
+                    style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
+                    <!-- เปลี่ยน docs/rpa-manual.pdf เป็น path หรือลิงก์ Google Drive ที่เก็บไฟล์คู่มือของคุณ -->
+                    <a href="manual.pdf" target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255,255,255,0.25); padding: 0.55rem 1.1rem; border-radius: 20px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all 0.25s ease;">
+                        <i class="fa-regular fa-file-pdf" style="color: #ef4444; font-size: 1.1rem;"></i>
+                        <span>เปิดอ่านคู่มือการใช้งานระบบ (PDF)</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; opacity: 0.7;"></i>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Section 4: การศึกษา -->
-        <section id="education">
-            <h2 class="page-title"><i class="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา</h2>
+            <section id="education">
+                <h2 class="page-title"><i class="fa-solid fa-graduation-cap"></i> ประวัติการศึกษา</h2>
 
-            <div class="water-card">
-                <span style="color: var(--accent); font-weight: 600;">2024 - 2026</span>
-                <h3 style="font-size: 1.2rem;">ปริญญาตรี บธ.บ. สาขาคอมพิวเตอร์ธุรกิจ (GPA 3.38)</h3>
-                <p style="color: var(--text-muted);">คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม</p>
-            </div>
+                <!-- 1. ปริญญาตรี มหาวิทยาลัยมหาสารคาม -->
+                <div class="water-card">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                        <!-- กรอบรูปวงกลมพื้นหลังขาวเต็มวง -->
+                        <div
+                            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.8); background: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.35); overflow: hidden; padding: 4px;">
+                            <img src="MSU.png" alt="มหาวิทยาลัยมหาสารคาม"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-university\' style=\'font-size:1.8rem; color:#0284c7;\'></i>';">
+                        </div>
 
-            <div class="water-card">
-                <span style="color: var(--accent); font-weight: 600;">2021 - 2023</span>
-                <h3 style="font-size: 1.2rem;">ปวส. สาขาเทคโนโลยีธุรกิจดิจิทัล (GPA 3.61)</h3>
-                <p style="color: var(--text-muted);">วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
-            </div>
+                        <!-- ข้อมูลการศึกษา -->
+                        <div style="flex: 1; min-width: 240px;">
+                            <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">2024 - 2026</span>
+                            <h3 style="font-size: 1.25rem; margin: 0.1rem 0;">ปริญญาตรี บธ.บ. (เกรดเฉลี่ยสะสม 3.38)</h3>
+                            <h5 style="font-size: 1.0rem; color: #e2e8f0; font-weight: 500;">สาขาคอมพิวเตอร์ธุรกิจ</h5>
+                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.2rem;">
+                                คณะการบัญชีและการจัดการ มหาวิทยาลัยมหาสารคาม</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="water-card">
-                <span style="color: var(--accent); font-weight: 600;">2018 - 2021</span>
-                <h3 style="font-size: 1.2rem;">ปวช. สาขาคอมพิวเตอร์ธุรกิจ (GPA 3.74)</h3>
-                <p style="color: var(--text-muted);">วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
-            </div>
-        </section>
+                <!-- 2. ปวส. วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี -->
+                <div class="water-card">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                        <!-- กรอบรูปวงกลมพื้นหลังขาวเต็มวง -->
+                        <div
+                            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.8); background: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.35); overflow: hidden; padding: 4px;">
+                            <img src="TBAC.jpg" alt="วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-graduation-cap\' style=\'font-size:1.8rem; color:#0284c7;\'></i>';">
+                        </div>
 
-        <!-- Section 5: ทักษะ -->
-        <section id="skills">
-            <h2 class="page-title"><i class="fa-solid fa-bolt"></i> ทักษะ & ใบรับรอง</h2>
+                        <!-- ข้อมูลการศึกษา -->
+                        <div style="flex: 1; min-width: 240px;">
+                            <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">2021 - 2023</span>
+                            <h3 style="font-size: 1.25rem; margin: 0.1rem 0;">ประกาศนียบัตรวิชาชีพชั้นสูง ปวส.
+                                (เกรดเฉลี่ยสะสม 3.61)</h3>
+                            <h5 style="font-size: 1.0rem; color: #e2e8f0; font-weight: 500;">สาขาเทคโนโลยีธุรกิจดิจิทัล
+                            </h5>
+                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.2rem;">
+                                วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="water-card">
-                <h3 style="font-size: 1.1rem; color: var(--accent); margin-bottom: 0.8rem;">Programming & Tools</h3>
-                <p style="color: #cbd5e1; line-height: 1.8;">
-                    Python, SQL, PHP, HTML/CSS, Power Automate Desktop (RPA), Power BI, Altair AI, VS Code, Google Colab
-                </p>
-                <h3 style="font-size: 1.1rem; color: var(--accent); margin: 1.2rem 0 0.8rem;">Certificates</h3>
-                <p style="color: #cbd5e1; line-height: 1.8;">
-                    • Generative AI Foundations - Pearson / Certiport (2026)<br>
-                    • Responsive Web Design - Thai MOOC / มทร.อีสาน (2025)<br>
-                    • Microsoft Power BI - TPQI (2025)
-                </p>
-            </div>
-        </section>
+                <!-- 3. ปวช. วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี -->
+                <div class="water-card">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                        <!-- กรอบรูปวงกลมพื้นหลังขาวเต็มวง -->
+                        <div
+                            style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.8); background: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 8px 20px rgba(0,0,0,0.35); overflow: hidden; padding: 4px;">
+                            <img src="TBAC.jpg" alt="วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-school\' style=\'font-size:1.8rem; color:#0284c7;\'></i>';">
+                        </div>
 
-        <!-- Section 6: ติดต่อ -->
-        <section id="contact">
-            <h2 class="page-title"><i class="fa-solid fa-paper-plane"></i> ช่องทางการติดต่อ</h2>
+                        <!-- ข้อมูลการศึกษา -->
+                        <div style="flex: 1; min-width: 240px;">
+                            <span style="color: var(--accent); font-weight: 600; font-size: 0.9rem;">2018 - 2021</span>
+                            <h3 style="font-size: 1.25rem; margin: 0.1rem 0;">ประกาศนียบัตรวิชาชีพ ปวช. (เกรดเฉลี่ยสะสม
+                                3.74)</h3>
+                            <h5 style="font-size: 1.0rem; color: #e2e8f0; font-weight: 500;">สาขาคอมพิวเตอร์ธุรกิจ</h5>
+                            <p style="color: var(--text-muted); font-size: 0.92rem; margin-top: 0.2rem;">
+                                วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <div class="water-card" style="text-align: center;">
-                <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
-                    <i class="fa-solid fa-envelope" style="color: var(--accent);"></i> banchasaenna04@gmail.com
-                </p>
-                <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
-                    <i class="fa-solid fa-phone" style="color: var(--accent);"></i> 061-294-4909
-                </p>
-                <p style="color: #cbd5e1; font-size: 1.1rem;">
-                    <i class="fa-brands fa-github" style="color: var(--accent);"></i> github.com/banchasaenna
-                </p>
-            </div>
-        </section>
+            <!-- Section: ใบรับรอง (Certificates) -->
+            <section id="certificates">
+                <h2 class="page-title"><i class="fa-solid fa-certificate"></i> ใบรับรอง & คุณวุฒิ (Certificates)</h2>
+
+                <!-- Certificate 1: Generative AI Foundations -->
+                <div class="water-card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- ข้อมูลข้อความด้านบน -->
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 600;">2026</span>
+                            <h3 style="font-size: 1.2rem; margin: 0.2rem 0;">Generative AI Foundations</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Pearson / Certiport</p>
+                        </div>
+
+                        <!-- รูปภาพ 2 รูปด้านล่างขนานกัน -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div class="img-preview-box"
+                                style="flex: 1; min-width: 140px; max-width: 220px; max-height: 140px;"
+                                onclick="openImageModal(this.querySelector('img').src, 'ใบรับรอง Generative AI Foundations - Pearson / Certiport')">
+                                <img src="Cert31320249491_page-0001.jpg" alt="Generative AI Certificate"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/1e293b/38bdf8?text=Certificate+Preview';">
+                                <div class="img-hover-overlay" style="font-size: 0.8rem;">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i> ดูใบรับรอง
+                                </div>
+                            </div>
+
+                            <div class="img-preview-box"
+                                style="flex: 1; min-width: 140px; max-width: 220px; max-height: 140px;"
+                                onclick="openImageModal(this.querySelector('img').src, 'ผลคะแนนสอบ Generative AI Foundations - Pearson / Certiport')">
+                                <img src="Result91520323454_page-0001.jpg" alt="Generative AI Score Result"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/1e293b/38bdf8?text=Score+Result';">
+                                <div class="img-hover-overlay" style="font-size: 0.8rem;">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i> ดูผลคะแนน
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 2: Responsive Web Design -->
+                <div class="water-card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- ข้อมูลข้อความด้านบน -->
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 600;">2025</span>
+                            <h3 style="font-size: 1.2rem; margin: 0.2rem 0;">Responsive Web Design</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Thai MOOC /
+                                มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน</p>
+                        </div>
+
+                        <!-- รูปภาพด้านล่าง -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div class="img-preview-box"
+                                style="flex: 1; min-width: 140px; max-width: 220px; max-height: 140px;"
+                                onclick="openImageModal(this.querySelector('img').src, 'ใบรับรอง Responsive Web Design - Thai MOOC')">
+                                <!-- เปลี่ยน path รูปใบรับรองตามจริงของคุณ -->
+                                <img src="uxui.jpg" alt="Responsive Web Design Certificate"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/1e293b/38bdf8?text=Certificate+Preview';">
+                                <div class="img-hover-overlay" style="font-size: 0.8rem;">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i> ดูใบรับรอง
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3: Microsoft Power BI -->
+                <div class="water-card">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- ข้อมูลข้อความด้านบน -->
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 600;">2025</span>
+                            <h3 style="font-size: 1.2rem; margin: 0.2rem 0;">Microsoft Power BI</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">สถาบันคุณวุฒิวิชาชีพ (TPQI)</p>
+                        </div>
+
+                        <!-- รูปภาพด้านล่าง -->
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div class="img-preview-box"
+                                style="flex: 1; min-width: 140px; max-width: 220px; max-height: 140px;"
+                                onclick="openImageModal(this.querySelector('img').src, 'ใบรับรอง Microsoft Power BI - TPQI')">
+                                <!-- เปลี่ยน path รูปใบรับรองตามจริงของคุณ -->
+                                <img src="Certificate-MS02-TH (1)_page-0001.jpg" alt="Microsoft Power BI Certificate"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200/1e293b/38bdf8?text=Certificate+Preview';">
+                                <div class="img-hover-overlay" style="font-size: 0.8rem;">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i> ดูใบรับรอง
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: ทักษะความสามารถ (Skills) -->
+            <section id="skills">
+                <h2 class="page-title"><i class="fa-solid fa-bolt"></i> ทักษะ & เครื่องมือ (Skills & Tools)</h2>
+
+                <div class="water-card">
+                    <h3 style="font-size: 1.05rem; color: var(--accent); margin-bottom: 0.8rem;"><i
+                            class="fa-solid fa-code"></i> Programming & Scripting</h3>
+                    <div class="skills-tag-container">
+                        <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-tag"><i class="fa-brands fa-php"></i> PHP</span>
+                        <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+                    </div>
+
+                    <h3 style="font-size: 1.05rem; color: var(--accent); margin: 1.5rem 0 0.8rem;"><i
+                            class="fa-solid fa-gears"></i> RPA & Automation</h3>
+                    <div class="skills-tag-container">
+                        <span class="skill-tag"><i class="fa-solid fa-robot"></i> Power Automate Desktop</span>
+                        <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i> Workflow
+                            Design</span>
+                    </div>
+
+                    <h3 style="font-size: 1.05rem; color: var(--accent); margin: 1.5rem 0 0.8rem;"><i
+                            class="fa-solid fa-chart-line"></i> Data & AI Tools</h3>
+                    <div class="skills-tag-container">
+                        <span class="skill-tag"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+                        <span class="skill-tag"><i class="fa-solid fa-brain"></i> Altair AI Studio</span>
+                        <span class="skill-tag"><i class="fa-solid fa-laptop-code"></i> VS Code</span>
+                        <span class="skill-tag"><i class="fa-brands fa-google"></i> Google Colab</span>
+                    </div>
+                </div>
+            </section>
+
+            <!--  
+            <section id="activity">
+                <h2 class="page-title"><i class="fa-solid fa-images"></i> ภาพกิจกรรม (Activities)</h2>
+
+                <div class="water-card" style="padding: 1.5rem;">
+                   
+                    <div class="activity-slider-wrapper">
+                        <button class="slider-arrow left" onclick="changeActivitySlide(-1)"><i
+                                class="fa-solid fa-chevron-left"></i></button>
+
+                        <div class="activity-slide-container"
+                            onclick="openImageModal(document.getElementById('activityImg').src, document.getElementById('activityCaption').innerText)">
+                           
+                            <img id="activityImg" src="Activity/1.jpg" alt="Activity Image"
+                                onerror="this.onerror=null; this.src='https://via.placeholder.com/800x450/1e293b/38bdf8?text=Activity+Image';">
+                            <div class="img-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                                คลิกเพื่อดูภาพขยาย</div>
+                        </div>
+
+                        <button class="slider-arrow right" onclick="changeActivitySlide(1)"><i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+
+                  
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; padding: 0 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <div id="activityCaption" style="color: #cbd5e1; font-size: 0.95rem; font-weight: 500;">
+                            ภาพกิจกรรมที่ 1
+                        </div>
+                        <div id="activityCounter"
+                            style="color: var(--accent); font-size: 0.85rem; font-weight: 600; background: rgba(56,189,248,0.15); padding: 0.2rem 0.7rem; border-radius: 12px; border: 1px solid rgba(56,189,248,0.3);">
+                            1 / 12
+                        </div>
+                    </div>
+                </div>
+            </section>  
+        -->
+
+            <!-- Section 6: ติดต่อ -->
+            <section id="contact">
+                <h2 class="page-title"><i class="fa-solid fa-paper-plane"></i> ช่องทางการติดต่อ</h2>
+
+                <div class="water-card" style="text-align: center;">
+                    <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
+                        banchasaenna04@gmail.com
+                    </p>
+                    <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
+                        <i class="fa-solid fa-phone" style="color: var(--accent);"></i> 061-294-4909
+                    </p>
+                    <p style="color: #cbd5e1; font-size: 1.1rem;">
+                        <i class="fa-brands fa-github" style="color: var(--accent);"></i>
+                        github.com/banchasaenna
+                    </p>
+                </div>
+            </section>
 
     </main>
 
@@ -271,9 +569,19 @@
         </nav>
     </div>
 
-    <!-- Script จัดการการสไลด์ของปุ่ม และเปลี่ยน Active ปุ่มอัตโนมัติขณะเลื่อนจอ (ScrollSpy) -->
+    <!-- Modal พรีวิวรูปภาพแบบ Glassmorphism -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal(event)">
+        <div class="modal-content-wrapper">
+            <button class="modal-close-btn" onclick="closeImageModal(event)"><i class="fa-solid fa-xmark"></i></button>
+            <img id="modalImg" src="" alt="Preview">
+            <div id="modalCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- Script รวมการจัดการ Navbar Smooth Scroll, ScrollSpy, Modal และ Activity Slider -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // --- 1. ตั้งค่า Navbar & ScrollSpy ---
             const nav = document.getElementById("waterNav");
             const indicator = document.getElementById("navIndicator");
             const navItems = document.querySelectorAll(".nav-item");
@@ -281,7 +589,7 @@
 
             // ฟังก์ชันสไลด์แคปซูลหยดน้ำ
             function moveIndicator(targetEl) {
-                if (!targetEl) return;
+                if (!targetEl || !nav || !indicator) return;
                 const navRect = nav.getBoundingClientRect();
                 const targetRect = targetEl.getBoundingClientRect();
                 const leftOffset = targetRect.left - navRect.left;
@@ -295,16 +603,36 @@
             const activeInitial = document.querySelector(".nav-item.active");
             if (activeInitial) moveIndicator(activeInitial);
 
-            // เมื่อกดปุ่มบน Navbar
+            // เมื่อกดปุ่มบน Navbar (ทำ Smooth Scroll เลื่อนละมุน)
             navItems.forEach(item => {
                 item.addEventListener("click", (e) => {
-                    navItems.forEach(el => el.classList.remove("active"));
-                    item.classList.add("active");
-                    moveIndicator(item);
+                    const href = item.getAttribute("href");
+
+                    if (href && href.startsWith("#") && href.length > 1) {
+                        const targetSection = document.querySelector(href);
+
+                        if (targetSection) {
+                            e.preventDefault(); // ป้องกันการเด้งวาร์ปแบบปกติของเบราว์เซอร์
+
+                            // สั่งให้เลื่อนนุ่มนวลไปยัง Section เป้าหมาย
+                            targetSection.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                            // อัปเดต Active State และเลื่อน Indicator
+                            navItems.forEach(el => el.classList.remove("active"));
+                            item.classList.add("active");
+                            moveIndicator(item);
+
+                            // อัปเดต URL Hash โดยไม่ทำให้หน้าวาร์ป
+                            history.pushState(null, null, href);
+                        }
+                    }
                 });
             });
 
-            // ตรวจจับตำแหน่งเลื่อนหน้าจอ (ScrollSpy) แล้วเลื่อนปุ่มให้อัตโนมัติ
+            // ตรวจจับตำแหน่งเลื่อนหน้าจอ (ScrollSpy) แล้วเลื่อนแคปซูลให้อัตโนมัติ
             window.addEventListener("scroll", () => {
                 let currentSectionId = "";
                 sections.forEach(section => {
@@ -316,7 +644,7 @@
 
                 if (currentSectionId) {
                     navItems.forEach(item => {
-                        const href = item.getAttribute("href").replace("#", "");
+                        const href = item.getAttribute("href") ? item.getAttribute("href").replace("#", "") : "";
                         if (href === currentSectionId && !item.classList.contains("active")) {
                             navItems.forEach(el => el.classList.remove("active"));
                             item.classList.add("active");
@@ -326,11 +654,82 @@
                 }
             });
 
+            // ปรับตำแหน่งแคปซูลเมื่อย่อ/ขยายหน้าจอ
             window.addEventListener("resize", () => {
                 const activeCurrent = document.querySelector(".nav-item.active");
                 if (activeCurrent) moveIndicator(activeCurrent);
             });
+
+            // --- 2. ตั้งค่าการนับรูปกิจกรรมครั้งแรก ---
+            const counterEl = document.getElementById("activityCounter");
+            if (counterEl) {
+                counterEl.innerText = `1 / ${totalActivityImages}`;
+            }
         });
+
+        // --- 3. ฟังก์ชัน Modal พรีวิวภาพ ---
+        function openImageModal(imgSrc, captionText) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const modalCaption = document.getElementById("modalCaption");
+
+            if (modalImg) modalImg.src = imgSrc;
+            if (modalCaption) modalCaption.innerText = captionText || "";
+            if (modal) {
+                modal.classList.add("show");
+                document.body.style.overflow = "hidden"; // ป้องกันการเลื่อนหน้าหลัง
+            }
+        }
+
+        function closeImageModal(e) {
+            if (e.target.classList.contains("image-modal") || e.target.closest(".modal-close-btn")) {
+                const modal = document.getElementById("imageModal");
+                if (modal) {
+                    modal.classList.remove("show");
+                    document.body.style.overflow = "auto";
+                }
+            }
+        }
+
+        // กดปุ่ม Esc บนคีย์บอร์ดเพื่อปิด Modal
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                const modal = document.getElementById("imageModal");
+                if (modal && modal.classList.contains("show")) {
+                    modal.classList.remove("show");
+                    document.body.style.overflow = "auto";
+                }
+            }
+        });
+
+        // --- 4. ฟังก์ชันจัดการสไลเดอร์ภาพกิจกรรม (Activity Slider) ---
+        const totalActivityImages = 12;
+        let currentActivityIndex = 1;
+
+        function changeActivitySlide(direction) {
+            currentActivityIndex += direction;
+
+            if (currentActivityIndex > totalActivityImages) {
+                currentActivityIndex = 1;
+            } else if (currentActivityIndex < 1) {
+                currentActivityIndex = totalActivityImages;
+            }
+
+            const imgEl = document.getElementById("activityImg");
+            const captionEl = document.getElementById("activityCaption");
+            const counterEl = document.getElementById("activityCounter");
+
+            if (imgEl) {
+                imgEl.style.opacity = "0.3";
+                setTimeout(() => {
+                    // กำหนด path เป็นนามสกุล .jpeg ตามโครงสร้างไฟล์จริงของคุณ
+                    imgEl.src = `Activity/${currentActivityIndex}.jpeg`;
+                    if (captionEl) captionEl.innerText = `ภาพกิจกรรมที่ ${currentActivityIndex}`;
+                    if (counterEl) counterEl.innerText = `${currentActivityIndex} / ${totalActivityImages}`;
+                    imgEl.style.opacity = "1";
+                }, 150);
+            }
+        }
     </script>
 </body>
 
