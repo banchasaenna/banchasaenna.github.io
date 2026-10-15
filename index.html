@@ -499,19 +499,19 @@
                 </div>
             </section>
 
-            <!--  
+            <!--
             <section id="activity">
                 <h2 class="page-title"><i class="fa-solid fa-images"></i> ภาพกิจกรรม (Activities)</h2>
 
                 <div class="water-card" style="padding: 1.5rem;">
-                   
+
                     <div class="activity-slider-wrapper">
                         <button class="slider-arrow left" onclick="changeActivitySlide(-1)"><i
                                 class="fa-solid fa-chevron-left"></i></button>
 
                         <div class="activity-slide-container"
                             onclick="openImageModal(document.getElementById('activityImg').src, document.getElementById('activityCaption').innerText)">
-                           
+
                             <img id="activityImg" src="Activity/1.jpg" alt="Activity Image"
                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/800x450/1e293b/38bdf8?text=Activity+Image';">
                             <div class="img-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -522,7 +522,7 @@
                                 class="fa-solid fa-chevron-right"></i></button>
                     </div>
 
-                  
+
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; padding: 0 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
                         <div id="activityCaption" style="color: #cbd5e1; font-size: 0.95rem; font-weight: 500;">
@@ -534,27 +534,139 @@
                         </div>
                     </div>
                 </div>
-            </section>  
+            </section>
         -->
 
-            <!-- Section 6: ติดต่อ -->
+            <!-- Section 6: ช่องทางการติดต่อ (Contact) -->
             <section id="contact">
-                <h2 class="page-title"><i class="fa-solid fa-paper-plane"></i> ช่องทางการติดต่อ</h2>
+                <h2 class="page-title"><i class="fa-solid fa-paper-plane"></i> ช่องทางการติดต่อ (Contact)</h2>
 
-                <div class="water-card" style="text-align: center;">
-                    <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-envelope" style="color: var(--accent);"></i>
-                        banchasaenna04@gmail.com
-                    </p>
-                    <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-phone" style="color: var(--accent);"></i> 061-294-4909
-                    </p>
-                    <p style="color: #cbd5e1; font-size: 1.1rem;">
-                        <i class="fa-brands fa-github" style="color: var(--accent);"></i>
-                        github.com/banchasaenna
-                    </p>
+                <!-- กรอบใหญ่ Glassmorphism อยู่กับที่ ไม่ขยับ -->
+                <div class="water-card" style="padding: 2rem;">
+
+                    <!-- โครงสร้างแบบ Grid 2 - 2 - 1 -->
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;">
+
+                        <!-- 1. Email -->
+                        <a href="mailto:banchasaenna04@gmail.com" target="_blank" class="contact-subcard"
+                            style="text-decoration: none; color: inherit;">
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.2rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease; height: 100%;">
+                                <div
+                                    style="width: 45px; height: 45px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-envelope"
+                                        style="color: var(--accent); font-size: 1.3rem;"></i>
+                                </div>
+                                <div style="overflow: hidden;">
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Email</div>
+                                    <div
+                                        style="font-size: 0.95rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #f1f5f9;">
+                                        banchasaenna04@gmail.com</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 2. Phone -->
+                        <a href="tel:0612944909" class="contact-subcard" style="text-decoration: none; color: inherit;">
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.2rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease; height: 100%;">
+                                <div
+                                    style="width: 45px; height: 45px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-phone" style="color: var(--accent); font-size: 1.2rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Phone</div>
+                                    <div style="font-size: 0.95rem; font-weight: 500; color: #f1f5f9;">061-294-4909
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 3. Line ID -->
+                        <a href="https://line.me/ti/p/~ehoiilod_4444" target="_blank" class="contact-subcard"
+                            style="text-decoration: none; color: inherit;">
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.2rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease; height: 100%;">
+                                <div
+                                    style="width: 45px; height: 45px; border-radius: 12px; background: rgba(34, 197, 94, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-brands fa-line" style="color: #4ade80; font-size: 1.4rem;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Line ID</div>
+                                    <div style="font-size: 0.95rem; font-weight: 500; color: #f1f5f9;">ehoiilod_4444
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 4. GitHub -->
+                        <a href="https://github.com/banchasaenna" target="_blank" class="contact-subcard"
+                            style="text-decoration: none; color: inherit;">
+                            <div
+                                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.2rem; border-radius: 16px; display: flex; align-items: center; gap: 1rem; transition: all 0.3s ease; height: 100%;">
+                                <div
+                                    style="width: 45px; height: 45px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-brands fa-github" style="color: #f1f5f9; font-size: 1.4rem;"></i>
+                                </div>
+                                <div style="overflow: hidden;">
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">GitHub</div>
+                                    <div
+                                        style="font-size: 0.95rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #f1f5f9;">
+                                        github.com/banchasaenna</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 5. ที่อยู่ (Address) ยึดเต็ม 2 คอลัมน์ด้านล่าง -->
+                        <a href="https://maps.app.goo.gl/2DvCsoqibfwZgSuM6" target="_blank" class="contact-subcard"
+                            style="grid-column: span 2; text-decoration: none; color: inherit;">
+                            <div
+                                style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 1.2rem; border-radius: 16px; display: flex; align-items: flex-start; gap: 1rem; transition: all 0.3s ease; cursor: pointer;">
+                                <div
+                                    style="width: 45px; height: 45px; border-radius: 12px; background: rgba(244, 63, 94, 0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fa-solid fa-location-dot" style="color: #fb7185; font-size: 1.3rem;"></i>
+                                </div>
+                                <div style="flex-grow: 1;">
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                                        <div style="font-size: 0.8rem; color: var(--text-muted);">ที่อยู่ปัจจุบัน /
+                                            Address</div>
+                                        <span style="font-size: 0.75rem; color: var(--accent);">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i> เปิดใน Google Maps
+                                        </span>
+                                    </div>
+                                    <div
+                                        style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.5; margin-top: 0.2rem;">
+                                        263 หมู่ 6 บ้านโนนสูง ต.บ้านถิ่น อ.โนนสัง จ.หนองบัวลำภู 39140
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
             </section>
+
+            <!-- CSS เสริมสำหรับเอฟเฟกต์การ์ดเล็กขยับตอนเอาเม้าส์ชี้ (Hover) -->
+            <style>
+                .contact-subcard:hover>div {
+                    transform: translateY(-4px);
+                    background: rgba(255, 255, 255, 0.09) !important;
+                    border-color: rgba(56, 189, 248, 0.3) !important;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+
+                /* ปรับให้รองรับจอมือถืออัตโนมัติ */
+                @media (max-width: 640px) {
+                    #contact .water-card>div {
+                        grid-template-columns: 1fr !important;
+                    }
+
+                    .contact-subcard[style*="grid-column: span 2"] {
+                        grid-column: span 1 !important;
+                    }
+                }
+            </style>
 
     </main>
 
@@ -566,6 +678,7 @@
             <a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> <span>ประสบการณ์</span></a>
             <a href="#projects" class="nav-item"><i class="fa-solid fa-code"></i> <span>ผลงาน</span></a>
             <a href="#education" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> <span>การศึกษา</span></a>
+            <a href="#certificates" class="nav-item"><i class="fa-solid fa-award"></i> <span>ใบรับรอง</span></a>
             <a href="#skills" class="nav-item"><i class="fa-solid fa-bolt"></i> <span>ทักษะ</span></a>
             <a href="#contact" class="nav-item"><i class="fa-solid fa-paper-plane"></i> <span>ติดต่อ</span></a>
         </nav>
